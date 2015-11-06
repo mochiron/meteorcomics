@@ -1,0 +1,139 @@
+@actor1: url("img/Sprite-0001.png");
+@actor1-size:32px 64px;
+@actor2: url("img/Sprite-0002.png");
+@actor2-size:32px 64px;
+@actor3: url("img/Sprite-0003.png");
+@actor3-size:32px 64px;
+@vignette-width:30%;
+@vignette-height:240px;
+@bubble-position:20%;
+
+.csscomic{
+  font-family: "Verdana";
+  //border: solid 2px black; //Need to find out how to properly do the frame border
+  width: 100%;
+  ul{
+    display: block;
+    padding: 0;
+    margin:0;
+    min-height: @vignette-height;
+    li{
+      width: @vignette-width;
+      float: left;
+      border: solid 1px black;
+      margin: 0.4em;
+      list-style: none;
+      position:relative;
+      height: @vignette-height;
+      &.bkg-city{
+        background-color: #ccf;
+      }
+      &.span2{
+        width: @vignette-width*2;
+      }
+      & a{
+        font-weight: bold;
+        color:#006;
+        text-decoration: none;
+        font-style: oblique;
+      }
+
+      .actor{
+        height:100%;
+        width:100%;
+        position: absolute;
+        &.actor1{
+          background-image: @actor1;
+          background-repeat: no-repeat;
+          background-size: @actor1-size;
+        }
+        &.actor2{
+          background-image: @actor2;
+          background-repeat: no-repeat;
+          background-size: @actor2-size;
+        }
+        &.actor3{
+          background-image: @actor3;
+          background-repeat: no-repeat;
+          background-size: @actor3-size;
+        }
+        &.left,&.flip.right{
+          float:left;
+          background-position: bottom left;
+        }
+        &.right,&.flip.left{
+          float:right;
+          background-position: bottom right;
+        }
+        &.use-50{
+          .bubble{
+            width: 42%;
+          }
+        }
+
+        .bubble{
+          margin:0.5em;
+          border: solid 1px #7F7F7F;
+          background-color: #fff;
+          border-radius: 1.1em;
+          padding: 0.5em;
+          position:relative;
+          display: inline-block;
+          &:after{
+            content:"";
+            position:absolute;
+            bottom:-14px;
+            left:@bubble-position;
+            border-style:solid;
+            border-width:15px 4px 0;
+            border-color: #fff transparent;
+            display: block;
+            width:0;
+            z-index: 1
+          }
+          &:before{
+            content:"";
+            position:absolute;
+            bottom:-16px;
+            left:calc(@bubble-position - 1px);
+            border-style:solid;
+            border-width:16px 6px 0;
+            border-color: #7f7f7f transparent;
+            display: block;
+            width:0;
+            z-index: 0
+          }
+        }
+
+
+        &.flip{
+          -webkit-transform:scaleX(-1);
+          -moz-tansform:scaleX(-1);
+          -ms-transform:scaleX(-1);
+          -o-transform:scaleX(-1);
+          transform:scaleX(-1);
+          &.left{
+            float:left;
+          }
+          &.right{
+            float:right;
+          }
+          .bubble{
+            -webkit-transform:scaleX(-1);
+            -moz-tansform:scaleX(-1);
+            -ms-transform:scaleX(-1);
+            -o-transform:scaleX(-1);
+            transform:scaleX(-1);
+            &:after{
+              left:100% - @bubble-position;
+            }
+            &:before{
+              left:calc(100% - @bubble-position - 1px);
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

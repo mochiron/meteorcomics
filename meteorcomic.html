@@ -1,0 +1,84 @@
+<head>
+  <title>meteorcomic</title>
+<style media="screen">
+
+</style>
+
+</head>
+
+<body>
+  <h1>CSS Comics</h1>
+
+  {{> hello}}
+
+<div class="csscomic">
+  <ul>
+    <li class="bkg-city">
+      <div class="actor actor3 left">
+        <div class="bubble">
+          CSS comics is a way for lazy people (like me) to create decent looking comic strips
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="actor actor3 left">
+        <div class="bubble">
+          Think <a href="http://dilbert.com/">Dilbert</a>, or even better, the <a href="http://www.qwantz.com/">Dinosaur comics</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="actor actor3 left">
+      </div>
+      <div class="actor actor1 flip right use-50">
+        <div class="bubble">
+          But they are images, not HTML
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="actor actor3 left use-50">
+        <div class="bubble">
+          Yup. You can use HTML tags in the bubbles.
+        </div>
+      </div>
+      <div class="actor actor1 flip right use-50">
+        <div class="bubble" style="width:30%;text-align:center;font-weight:bold;
+        background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+ background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+ color:transparent;
+ -webkit-background-clip: text;
+ background-clip: text;">
+          WOW! This is so neat!
+        </div>
+      </div>
+
+    </li>
+    <li>
+      <div class="actor actor3 left">
+        <div class="bubble">
+          Wait...<br/> How did you do that?
+        </div>
+      </div>
+      <div class="actor actor1 right">
+      </div>
+    </li>
+    <li>
+      <div class="actor actor3 left">
+      </div>
+      <div class="actor actor1 flip right use-50">
+        <div class="bubble" style="text-align:center">
+          <img src="https://lh5.ggpht.com/YKhQHFsW9UTg4EeK_Kr6ImPADeYVTqd0rdevHVsJ12iKWq8VdoQ8_WPKLhQadofLuw=w80" alt="Don't feed the trolls" />
+        </div>
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+
+</body>
+
+<template name="hello">
+    Have a wonderful day!
+</template>
